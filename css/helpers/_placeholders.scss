@@ -1,0 +1,16 @@
+%ul-list-none {
+	list-style:none;
+}
+%flexbox { 
+	@include flexbox; 
+}
+%flex-center {
+	@include flexbox;
+	@include align-items(center);
+	@include justify-content(center);
+}
+%appearence-none {
+	appearance:none;
+	-moz-appearance:none; /* Firefox */
+	-webkit-appearance:none; /* Safari and Chrome */
+}

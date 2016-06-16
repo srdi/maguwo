@@ -1,0 +1,450 @@
+/***********IMPORTS************/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+.page-header__nav ul, .features__list {
+  list-style: none; }
+
+.page-header, .page-header__nav ul, .page-header__help-r2, .features, .clients__top, .clients__citations, .footer-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.main, .main__check-domain, .services, .info-block, .info-block__img-block, .features__list, .features__item, .pricing, .page-footer__copyright {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+
+.btn, .main__domain-select {
+  appearance: none;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */ }
+
+/************IMPORTS END************/
+/************Global Styles************/
+@font-face {
+  font-family: Rockwell;
+  src: url("fonts/rockwell.ttf"); }
+
+@font-face {
+  font-family: Rockwell;
+  font-style: italic;
+  src: url("fonts/rockwell-italic.ttf"); }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+*:focus {
+  outline: none; }
+
+.pp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 111;
+  opacity: 0.3; }
+
+body {
+  /* width: 1400px; */ }
+
+.link--reset {
+  text-decoration: none;
+  color: #000; }
+
+.btn {
+  padding: 15px 30px;
+  font-size: 14px;
+  font-family: Raleway; }
+  .btn--simple {
+    border: none; }
+  .btn--yellow {
+    background: #ffe13e; }
+    .btn--yellow:hover {
+      background: #ffe558; }
+  .btn--transparent {
+    background: transparent;
+    border: 2.65px solid #fff;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px 50px; }
+    .btn--transparent:hover {
+      background: rgba(255, 255, 255, 0.2); }
+
+/************Global Styles END************/
+/************HEADER************/
+.page-header {
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  height: 148px; }
+  .page-header__logo {
+    margin: 0 6.2% 0 8.14285714%; }
+  .page-header__nav ul {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between; }
+  .page-header__nav li {
+    margin: 0 16px; }
+  .page-header_nav li:first-child {
+    margin-left: 0px; }
+  .page-header__nav a {
+    color: #202242;
+    font: 16px Raleway;
+    text-transform: uppercase; }
+  .page-header__nav-item--active a {
+    font-weight: bold;
+    color: #ffe13e; }
+  .page-header__help {
+    font: 600 12px Raleway;
+    color: #202242;
+    margin: 0 0% 0 3%;
+    -webkit-box-flex: 0.5;
+    -webkit-flex-grow: 0.5;
+    -moz-flex-grow: 0.5;
+    -ms-flex-positive: 0.5;
+    flex-grow: 0.5; }
+  .page-header__help-r2 {
+    /*row 2*/
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    margin: 22px 0 0; }
+  .page-header__vertical-line {
+    height: 148px;
+    width: 1px;
+    background: #ebebeb; }
+  .page-header__help-vertical-line {
+    display: inline-block;
+    height: 34px;
+    width: 1px;
+    background: #babbc4;
+    margin: 0 19px 0 22px; }
+  .page-header__btn {
+    font-weight: 600;
+    color: #202242; }
+  .page-header__help-number {
+    font: bold 24px Lato;
+    color: #202242; }
+
+/************HEADER END************/
+/************MAIN************/
+.main {
+  background: url("../img/main-bg.jpg") no-repeat 100% 100%;
+  height: 792px;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .main__header {
+    font: 48px 'Rockwell';
+    color: #fff;
+    margin-bottom: 30px; }
+  .main__subheader {
+    font: 30px Raleway;
+    color: #fff;
+    margin-bottom: 30px;
+    word-spacing: 8px; }
+  .main__check-domain {
+    width: 575px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.502);
+    font-family: Raleway;
+    padding: 0px 17px;
+    margin-top: 30px; }
+  .main__domain-input {
+    font-size: 18px;
+    width: 300px;
+    height: 54px;
+    border: none;
+    padding-left: 23px;
+    color: #2d2d2d; }
+    .main__domain-input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #2d2d2d; }
+    .main__domain-input::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #2d2d2d; }
+    .main__domain-input:-ms-input-placeholder {
+      /* IE 10+ */
+      color: #2d2d2d; }
+    .main__domain-input:-moz-placeholder {
+      /* Firefox 18- */
+      color: #2d2d2d; }
+  .main__domain-select {
+    background: #ffe13e url("../img/select-toggle.png") no-repeat 90% 50%;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    width: 108px;
+    height: 54px;
+    color: #2d2d2d;
+    padding-left: 21px; }
+  .main__check-btn {
+    font-weight: bold;
+    color: #fff;
+    height: 54px;
+    padding: 0px 15px;
+    min-width: 160px;
+    border-left: 1px solid #fff; }
+
+/************MAIN END************/
+/************SERVICE************/
+.services__webhost {
+  background: #202242; }
+
+.services__domain {
+  background: #ffe13e; }
+
+.info-block {
+  width: 50%;
+  color: #fff;
+  font-family: Raleway;
+  height: 653px;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .info-block__img-block {
+    height: 200px;
+    margin-bottom: 50px; }
+  .info-block__header {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 50px; }
+  .info-block__main-text {
+    font-size: 14px;
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 50px; }
+
+/************SERVICE END************/
+/************FEATURES************/
+.features {
+  background: #fbf8f1 url("../img/triangle-big.svg") no-repeat 50% 50%;
+  font-family: Raleway;
+  height: 615px;
+  padding-top: 85px;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+  .features__header {
+    color: #202242;
+    font-size: 48px;
+    margin-bottom: 14px; }
+  .features__subheader {
+    color: #202242;
+    font-size: 24px;
+    font-weight: normal; }
+  .features__list {
+    margin-top: 80px; }
+  .features__item {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .features__item:not(:first-child) {
+      margin-left: 50px; }
+    .features__item-line {
+      width: 68px;
+      height: 3px;
+      background: #8d8d99;
+      margin: 34px 0 30px 0; }
+    .features__item-header {
+      font: 30px Rockwell;
+      color: #f4d320;
+      margin-bottom: 30px; }
+    .features__item-text {
+      text-align: center;
+      font: 14px Raleway;
+      color: #202242;
+      max-width: 240px; }
+
+/************FEATURES END************/
+/************Clients************/
+.clients {
+  padding: 90px 0; }
+  .clients__top {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+  .clients__header {
+    font: bold 36px Raleway;
+    color: #202242;
+    margin-bottom: 25px; }
+  .clients__overview {
+    font: 16px Raleway;
+    color: #adadad;
+    max-width: 340px; }
+  .clients__companies {
+    margin-left: 60px; }
+  .clients__company {
+    width: 175px;
+    height: 115px;
+    margin-right: 28px; }
+  .clients__citations {
+    margin-top: 80px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+  .clients__quote {
+    width: 26.57143%;
+    background: #faf9f9;
+    position: relative;
+    height: 180px;
+    padding: 20px 0 0 0; }
+    .clients__quote:not(:first-child) {
+      margin-left: 28px; }
+
+.quote__body {
+  font: italic 14px/24px Rockwell;
+  color: #a4a4a4;
+  max-width: 320px;
+  margin: 0 auto 18px auto; }
+
+.quote__author {
+  font: bold 16px Raleway;
+  color: #696969;
+  width: 320px;
+  margin: 0 auto;
+  display: block; }
+
+.quote__portret {
+  position: absolute;
+  right: 20px;
+  bottom: -30px; }
+
+/************Clients END************/
+/************PRICING************/
+.pricing {
+  background: #202242;
+  padding: 90px 0; }
+  .pricing__header {
+    font: bold 36px Raleway;
+    color: #fff;
+    margin-bottom: 20px; }
+  .pricing__subheader {
+    font: 18px Raleway;
+    color: #67687b; }
+  .pricing__btn {
+    border: 3px solid #fff;
+    margin-left: 115px;
+    font: bold 18px Raleway;
+    color: #202242;
+    padding: 29px 53px; }
+
+/************PRICING END************/
+/************FOOTER************/
+.page-footer {
+  background: #363855 url("../img/footer-bg.png") no-repeat 21% 39%;
+  height: 514px;
+  position: relative;
+  padding: 144px 120px 0 0; }
+  .page-footer__copyright {
+    position: absolute;
+    bottom: 72px;
+    width: 100%;
+    font: 17px Raleway;
+    color: #fff;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .page-footer__logo {
+    transform: rotate(-15deg);
+    width: 31px;
+    margin-bottom: 12px; }
+
+.footer-nav {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  align-items: flex-end; }
+  .footer-nav__header {
+    font: bold 18px Raleway;
+    color: #fff;
+    margin-bottom: 23px; }
+  .footer-nav__list {
+    list-style: none; }
+  .footer-nav__item {
+    text-align: right;
+    padding: 8px 0;
+    width: 65px; }
+    .footer-nav__item:not(:last-child) {
+      border-bottom: 1px solid #565870; }
+    .footer-nav__item a {
+      color: #fff;
+      font: 16px Raleway;
+      text-decoration: none; }
+  .footer-nav__socials {
+    list-style: none;
+    margin: 33px 0 62px 0; }
+    .footer-nav__socials li {
+      display: inline-block; }
+      .footer-nav__socials li:not(:last-child) {
+        margin-right: 18px; }
+  .footer-nav__social {
+    width: 17px;
+    height: 19px;
+    object-fit: none; }
+    .footer-nav__social--twitter {
+      object-position: 0 0; }
+    .footer-nav__social--instagram {
+      object-position: -34px 0; }
+    .footer-nav__social--google {
+      object-position: -73px 0; }
+  .footer-nav__back {
+    color: #fff;
+    font: 11px Raleway;
+    text-decoration: none; }
+
+/************FOOTER END***********/

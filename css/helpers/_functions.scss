@@ -1,0 +1,4 @@
+@function to-percent($width)
+{
+	@return ($width/1400*100)+%;
+}
