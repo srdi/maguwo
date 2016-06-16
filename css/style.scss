@@ -1,0 +1,477 @@
+/***********IMPORTS************/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "helpers/placeholders";
+
+/************IMPORTS END************/
+
+
+/************Global Styles************/
+@font-face {
+    font-family: Rockwell;
+    src: url('fonts/rockwell.ttf');
+}
+@font-face {
+    font-family: Rockwell;
+    font-style: italic;
+    src: url('fonts/rockwell-italic.ttf');
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+*:focus {
+  outline: none;
+}
+.pp {
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 111;
+  opacity: 0.3;
+}
+body {
+  /* width: 1400px; */
+}
+.link--reset {
+  text-decoration: none;
+  color: #000;
+}
+.btn {
+  @extend %appearence-none;
+  padding: 15px 30px;
+  font-size: 14px;
+  font-family: Raleway;
+  &--simple {
+    border:none;
+
+  }
+  &--yellow {
+    background: $light-yellow;
+    &:hover {
+      background:lighten($light-yellow,5%);
+    }
+  }
+  &--transparent {
+    background:transparent;
+    border: 2.65px solid #fff;
+    font-weight: bold;
+    color:#fff;
+    padding: 15px 50px;
+    &:hover {
+      background: rgba(255,255,255,.2);
+    }
+  }
+
+}
+
+
+
+/************Global Styles END************/
+
+/************HEADER************/
+.page-header {
+  align-items: center;
+  @extend %flexbox;
+  @include justify-content(space-between);
+  height: $header-height;
+
+  &__logo {
+    margin: 0 6.2% 0 8.14285714%;
+  }
+  &__nav {
+  }
+  &__nav ul {
+    @extend %flexbox,%ul-list-none; 
+    @include justify-content(space-between);
+  }
+  &__nav li{
+    margin: 0 16px;
+  }
+  &_nav li:first-child {
+    margin-left:0px;
+  }
+  &__nav a {
+    color:$dark-blue;
+    font: 16px Raleway;
+    text-transform: uppercase;
+  }
+  &__nav-item--active a{
+    font-weight: bold;
+    color: $light-yellow;
+  }
+  &__help {
+    font:600 12px Raleway;
+    color: $dark-blue;
+    // margin: 0 3% 0 0;
+    margin: 0 0% 0 3%;
+    @include flex-grow(0.5);
+  }
+  &__help-r2 { /*row 2*/
+    @extend %flexbox;
+    @include align-items(center);
+    margin: 22px 0 0 ;
+  }
+  &__vertical-line {
+    height: $header-height;
+    width: 1px;
+    background: #ebebeb;
+  }
+  &__help-vertical-line {
+    display: inline-block;
+    height: 34px;
+    width:1px;
+    background: #babbc4;
+    margin:0 19px 0 22px;
+  }
+  &__btn {
+    font-weight: 600;
+    color: $dark-blue;
+  }
+  &__help-number {
+    font: bold 24px Lato;
+    color: $dark-blue;
+  }
+}
+/************HEADER END************/
+
+/************MAIN************/
+.main {
+  background: url('../img/main-bg.jpg') no-repeat 100% 100%;
+  height: 792px;
+  @extend %flex-center;
+  @include flex-direction(column);
+
+  &__header {
+    font: 48px 'Rockwell';
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  &__subheader {
+    font:30px Raleway;
+    color: #fff;
+    margin-bottom: 30px;
+     word-spacing: 8px;
+
+  }
+  &__check-domain {
+    width: 575px;
+    height: 90px;
+    background: rgba(255,255,255,.502);
+    font-family: Raleway;
+    padding: 0px 17px;
+    @extend %flex-center;
+    margin-top: 30px;
+  }
+  &__domain-input {
+    font-size: 18px;
+    width: 300px;
+    height: 54px;
+    border:none;
+    padding-left: 23px;
+    color: $dark-grey;
+    @include placeholder-color($dark-grey);
+  }
+  &__domain-select {
+    background:$light-yellow url('../img/select-toggle.png') no-repeat 90% 50%;
+    border:none;
+    
+    font-weight: bold;
+    font-size: 18px;
+    width: 108px;
+    height: 54px;
+    color: $dark-grey;
+    padding-left: 21px;
+    @extend %appearence-none;
+
+  }
+  &__check-btn {
+    font-weight: bold;
+    color: #fff;
+    height: 54px;
+    padding: 0px 15px;
+    min-width: 160px;
+    border-left: 1px solid #fff;
+  }
+
+}
+/************MAIN END************/
+
+/************SERVICE************/
+.services {
+  @extend %flex-center;
+
+  &__webhost {
+    background:$dark-blue;
+  }
+  &__domain {
+    background:$light-yellow;
+  }
+}
+.info-block {
+  width:50%;
+  color:#fff;
+  font-family: Raleway;
+  height: 653px;
+  @extend %flex-center;
+  @include flex-direction(column);
+  &__img-block {
+    height: 200px;
+    margin-bottom: 50px;
+    @extend %flex-center;
+  }
+  &__header {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  &__main-text {
+    font-size:14px;
+    text-align: center;
+    max-width: 500px;
+    margin-bottom: 50px;
+  }
+}
+/************SERVICE END************/
+
+/************FEATURES************/
+.features {
+  background:#fbf8f1 url('../img/triangle-big.svg') no-repeat 50% 50%;
+  font-family: Raleway;
+  height: 615px;
+  padding-top: 85px;
+  @extend %flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  
+  &__header {
+    
+    color: $dark-blue;
+    font-size:48px;
+    margin-bottom: 14px;
+  }
+  &__subheader {
+    color: $dark-blue;
+    font-size:24px;
+    font-weight: normal;
+  }
+  &__list {
+    // padding: 0 to-percent(50);
+    margin-top: 80px;
+    @extend %ul-list-none;
+    @extend %flex-center;
+
+  }
+  &__item {
+      @extend %flex-center;
+      @include flex-direction(column);
+      &:not(:first-child)
+      {
+        margin-left:50px;
+      }
+      &-img {
+        
+      }
+      &-line {
+        width:68px;
+        height: 3px;
+        background:#8d8d99;
+        margin: 34px 0 30px 0;
+      }
+      &-header {
+        font:30px Rockwell;
+        color: #f4d320;
+        margin-bottom: 30px;
+      }
+      &-text {
+        text-align: center;
+        font:14px Raleway;
+        color: $dark-blue;  
+        max-width: 240px;  
+      }
+    
+  }
+
+
+}
+/************FEATURES END************/
+
+/************Clients************/
+.clients {
+  
+  padding: 90px 0;
+  &__top {
+    @extend %flexbox;
+    @include justify-content(center);
+  }
+  &__header {
+    font:bold 36px Raleway;
+    color: $dark-blue;
+    margin-bottom: 25px;
+  }
+  &__overview {
+    font:16px Raleway;
+    color:#adadad;
+    max-width: 340px;
+  }
+  &__companies {
+    margin-left: 60px;
+  }
+  &__company {
+    width:175px;
+    height: 115px;
+    margin-right: 28px;
+  }
+  &__citations {
+    margin-top: 80px;
+    @extend %flexbox;
+    @include justify-content(center);
+
+  }
+  &__quote {
+    width:to-percent(372);
+    background:#faf9f9;
+    position:relative;
+    height: 180px;
+    padding:20px 0 0 0;
+    &:not(:first-child)
+    {
+      margin-left: 28px;
+    }
+
+  }
+}
+.quote {
+      &__body {
+      font:italic 14px/24px Rockwell;
+      color:#a4a4a4;
+      max-width: 320px;
+      margin:0 auto 18px auto;
+
+    }
+    &__author {
+      font:bold 16px Raleway;
+      color: #696969;
+      width:320px;
+      margin:0 auto;
+      display: block;
+    }
+    &__portret {
+      position:absolute;
+      right: 20px;
+      bottom: -30px;
+    }
+}
+/************Clients END************/
+
+/************PRICING************/
+.pricing {
+  background:$dark-blue;
+  padding: 90px 0;
+  @extend %flex-center;
+  &__header {
+    font: bold 36px Raleway;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  &__subheader {
+    font:18px Raleway;
+    color:#67687b;
+  }
+  &__btn {
+    border: 3px solid #fff;
+    margin-left: 115px;
+    font: bold 18px Raleway;
+    color: $dark-blue;
+    padding:29px 53px; 
+  }
+}
+/************PRICING END************/
+
+/************FOOTER************/
+.page-footer {
+  background:#363855 url('../img/footer-bg.png') no-repeat 21% 39%;
+  height: 514px;
+  position:relative;
+  padding: 144px 120px 0 0;
+  &__copyright {
+    position:absolute;
+    bottom:72px;
+    width:100%;
+    font:17px Raleway;
+    color: #fff;
+    @extend %flex-center;
+    @include flex-direction(column);
+
+  }
+  &__logo {
+    transform: rotate(-15deg);
+    width:31px;
+    margin-bottom: 12px;
+  }
+}
+.footer-nav {
+  @extend %flexbox;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  
+  &__header {
+    font: bold 18px Raleway;
+    color:#fff;
+    margin-bottom: 23px;
+  }
+  &__list {
+    list-style:none;
+  }
+  &__item {
+    text-align: right;
+    padding: 8px 0;
+    width:65px;
+    &:not(:last-child)
+    {
+      border-bottom: 1px solid #565870;
+    }
+    & a {
+      color: #fff;
+      font: 16px Raleway;
+      text-decoration: none;
+    }
+  }
+  &__socials {
+    list-style: none;
+    margin:33px 0 62px 0;
+    & li {
+      display: inline-block;
+      &:not(:last-child)
+      {
+        margin-right: 18px;
+      }
+    }
+  }
+  &__social {
+    width: 17px;
+    height: 19px;
+    object-fit: none;
+
+
+    &--twitter {
+      object-position: 0 0;
+    }
+    &--instagram {
+      object-position: -34px 0;
+    }
+    &--google {
+      object-position: -73px 0;
+    }
+  }
+  &__back {
+    color: #fff;
+    font:11px Raleway;
+    text-decoration: none;
+  }
+
+}
+/************FOOTER END***********/
