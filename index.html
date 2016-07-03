@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MaguwoHost</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
   </head>
   <body>
-    <!-- <img src="bg.jpg" class="pp">  -->
+    <!-- <img src="bg.jpg" class="pp">   -->
     <header class="page-header">
-      <img src="img/logo.png" alt="MaguwoHost" class="page-header__logo">
+      <div class="page-header__logo-block">
+        <img src="img/logo.png" alt="MaguwoHost" class="page-header__logo">
+      </div>
       <nav class="page-header__nav">
         <ul>
           <li class="page-header__nav-item--active"><a href="#" class="link--reset">Home</a></li>
@@ -18,7 +23,6 @@
           <li><a href="#" class="link--reset">Hosting</a></li>
         </ul>
       </nav>
-      <div class="page-header__vertical-line"></div>
       <div class="page-header__help">
         <p>Do you need help ? Just Email, Live chat or Call us</p>
         <div class="page-header__help-r2">
@@ -27,7 +31,29 @@
           <span class="page-header__help-number">6284-6534</span>
         </div>
       </div>
+      <div class="page-header__menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+    <nav class="mobile-nav">
+        <ul>
+          <li><a href="#" class="link--reset">Home</a></li>
+          <li><a href="#" class="link--reset">About</a></li>
+          <li><a href="#" class="link--reset">Pricing</a></li>
+          <li><a href="#" class="link--reset">Domain</a></li>
+          <li><a href="#" class="link--reset">Hosting</a></li>
+        </ul>
+      <div class="mobile-nav__help">
+        <p>Do you need help ? Just Email, Live chat or Call us</p>
+        <div class="page-header__help-r2">
+          <button class="btn btn--yellow btn--simple page-header__btn">Live Chat</button>
+          <span class="page-header__help-vertical-line"></span>
+          <span class="page-header__help-number">6284-6534</span>
+        </div>
+      </div>
+    </nav>
     <section class="main">
       <h1 class="main__header">Just a Proffesional Web Hosting Services</h1>
       <h3 class="main__subheader">modern - fast - reliable</h3>
@@ -134,9 +160,9 @@
           <li class="footer-nav__item"><a href="#">Contact</a></li>
         </ul>
         <ul class="footer-nav__socials">
-          <li><a href="#"><img class="footer-nav__social footer-nav__social--twitter" src="img/socials.png" alt="Twitter"></a></li>
-          <li><a href="#"><img class="footer-nav__social footer-nav__social--instagram" src="img/socials.png" alt="Instagram"></a></li>
-          <li><a href="#"><img class="footer-nav__social footer-nav__social--google" src="img/socials.png" alt="Google+"></a></li>
+          <li><a href="#"  class="footer-nav__social footer-nav__social--twitter"></a></li>
+          <li><a href="#" class="footer-nav__social footer-nav__social--instagram"></a></li>
+          <li><a href="#" class="footer-nav__social footer-nav__social--google"></a></li>
         </ul>
         <a href="#" class="footer-nav__back">Back To Top</a>
       </nav>
