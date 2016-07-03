@@ -14,3 +14,13 @@
 	-moz-appearance:none; /* Firefox */
 	-webkit-appearance:none; /* Safari and Chrome */
 }
+
+%nav-link-style {
+	      color:$dark-blue;
+      font: 16px Raleway;
+      text-transform: uppercase;
+        &:hover {
+          color: $light-yellow;
+          font-weight: bold;
+        }
+}

@@ -1,4 +1,4 @@
-/***********IMPORTS************/
+/*********IMPORTS************/
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,600);
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
 @import "helpers/variables";
@@ -12,16 +12,17 @@
 /************Global Styles************/
 @font-face {
     font-family: Rockwell;
-    src: url('fonts/rockwell.ttf');
+    src: url('fonts/rockwell.ttf') format('truetype');
 }
 @font-face {
     font-family: Rockwell;
     font-style: italic;
-    src: url('fonts/rockwell-italic.ttf');
+    src: url('fonts/rockwell-italic.ttf') format('truetype');
 }
 * {
   padding: 0;
   margin: 0;
+  box-sizing:border-box;
 }
 *:focus {
   outline: none;
@@ -34,7 +35,7 @@
   opacity: 0.3;
 }
 body {
-  /* width: 1400px; */
+  /*width: 1400px;*/
 }
 .link--reset {
   text-decoration: none;
@@ -74,30 +75,45 @@ body {
 
 /************HEADER************/
 .page-header {
-  align-items: center;
-  @extend %flexbox;
-  @include justify-content(space-between);
   height: $header-height;
+  position:relative;
+  z-index: 2;
+  background:#fff;
 
+  &__logo-block {
+    width:20%;
+    text-align: center;
+    float: left;
+    z-index: 2;
+  }
   &__logo {
-    margin: 0 6.2% 0 8.14285714%;
+    margin:58px 0 0 0;
+    
+    width:70%;
+    min-width: 170px;
+    max-width: 226px;
   }
   &__nav {
-  }
-  &__nav ul {
-    @extend %flexbox,%ul-list-none; 
-    @include justify-content(space-between);
-  }
-  &__nav li{
-    margin: 0 16px;
-  }
-  &_nav li:first-child {
-    margin-left:0px;
-  }
-  &__nav a {
-    color:$dark-blue;
-    font: 16px Raleway;
-    text-transform: uppercase;
+    float: left;
+    /*margin-right: 4%;*/
+    width:45.8%;
+    text-align: center;
+    li {
+      &:not(:last-child)
+      {
+        margin-right: 6%;
+      }
+      display: inline-block;
+    }
+  
+    ul {
+      line-height: $header-height;
+      @extend %ul-list-none;
+    }
+
+    a {
+      @extend %nav-link-style;
+    }
   }
   &__nav-item--active a{
     font-weight: bold;
@@ -106,26 +122,42 @@ body {
   &__help {
     font:600 12px Raleway;
     color: $dark-blue;
-    // margin: 0 3% 0 0;
-    margin: 0 0% 0 3%;
-    @include flex-grow(0.5);
+    float: left;
+    border-left:1px solid #ebebeb;
+    height: $header-height;
+    width: 34%;
+    text-align: center;
+    @extend %flexbox;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+  &__menu {
+    display: none;
+    float: right;
+    /*margin-right: 40px;*/
+    margin-right: 7%;
+    margin-top: 60px;
+    width:25px;
+    height: 25px;
+    span {
+      width:100%;
+      height: 5px;
+      display: block;
+      margin-bottom: 5px;
+      background:$dark-blue;
+    }
   }
   &__help-r2 { /*row 2*/
-    @extend %flexbox;
-    @include align-items(center);
     margin: 22px 0 0 ;
   }
-  &__vertical-line {
-    height: $header-height;
-    width: 1px;
-    background: #ebebeb;
-  }
+
   &__help-vertical-line {
     display: inline-block;
     height: 34px;
     width:1px;
     background: #babbc4;
-    margin:0 19px 0 22px;
+    margin:0 6% 0 6%;
+    vertical-align: middle;
   }
   &__btn {
     font-weight: 600;
@@ -134,14 +166,45 @@ body {
   &__help-number {
     font: bold 24px Lato;
     color: $dark-blue;
+    vertical-align: middle;
   }
+ 
 }
+/************MOBILE NAV************/
+.mobile-nav {
+    transition: top 1s;
+    top:-$header-height;
+    position:absolute;
+    height: 120px;
+    padding-top:10px;
+    width:100%;
+    background:#fff;
+    z-index: 1;
+    border-top:1px solid rgba(0,0,0,0.02);
+    ul {
+      float: left;
+      margin-left: 3%;
+      @extend %ul-list-none;
+
+      a {
+        @extend %nav-link-style;
+      }
+    }
+
+    &__help {
+      float: right;
+      margin-right: 2%;
+    }
+}
+/************MOBILE NAV END************/
 /************HEADER END************/
 
 /************MAIN************/
 .main {
-  background: url('../img/main-bg.jpg') no-repeat 100% 100%;
+  clear: both;
+  background: url('../img/main-bg.jpg') no-repeat 100% 100%/100% 100%;
   height: 792px;
+  padding: 0 10px;
   @extend %flex-center;
   @include flex-direction(column);
 
@@ -149,20 +212,21 @@ body {
     font: 48px 'Rockwell';
     color: #fff;
     margin-bottom: 30px;
+    text-align: center;
   }
   &__subheader {
     font:30px Raleway;
     color: #fff;
     margin-bottom: 30px;
      word-spacing: 8px;
-
+    text-align: center;
   }
   &__check-domain {
-    width: 575px;
-    height: 90px;
+    /*width: 575px;*/
+    /*height: 90px;*/
     background: rgba(255,255,255,.502);
     font-family: Raleway;
-    padding: 0px 17px;
+    padding: 17px 17px;
     @extend %flex-center;
     margin-top: 30px;
   }
@@ -186,6 +250,10 @@ body {
     color: $dark-grey;
     padding-left: 21px;
     @extend %appearence-none;
+    
+    &::-ms-expand { /*HIDES SELECT TOGGLE*/
+      display: none;
+    }
 
   }
   &__check-btn {
@@ -231,7 +299,7 @@ body {
   &__main-text {
     font-size:14px;
     text-align: center;
-    max-width: 500px;
+    max-width: 90%;
     margin-bottom: 50px;
   }
 }
@@ -241,8 +309,8 @@ body {
 .features {
   background:#fbf8f1 url('../img/triangle-big.svg') no-repeat 50% 50%;
   font-family: Raleway;
-  height: 615px;
-  padding-top: 85px;
+  min-height:615px; 
+  padding: 85px 10px 40px 10px;
   @extend %flexbox;
   @include flex-direction(column);
   @include align-items(center);
@@ -261,11 +329,13 @@ body {
   &__list {
     // padding: 0 to-percent(50);
     margin-top: 80px;
+    @include flex-wrap(wrap); 
     @extend %ul-list-none;
     @extend %flex-center;
-
+    @include justify-content(space-around);
   }
   &__item {
+      margin-bottom: 25px;
       @extend %flex-center;
       @include flex-direction(column);
       &:not(:first-child)
@@ -285,6 +355,7 @@ body {
         font:30px Rockwell;
         color: #f4d320;
         margin-bottom: 30px;
+        text-align: center; 
       }
       &-text {
         text-align: center;
@@ -306,6 +377,7 @@ body {
   &__top {
     @extend %flexbox;
     @include justify-content(center);
+    padding-left:3%;
   }
   &__header {
     font:bold 36px Raleway;
@@ -323,20 +395,23 @@ body {
   &__company {
     width:175px;
     height: 115px;
-    margin-right: 28px;
+    margin: 0 28px 10px 0;
   }
   &__citations {
     margin-top: 80px;
     @extend %flexbox;
     @include justify-content(center);
+    @include flex-wrap(wrap);
 
   }
   &__quote {
     width:to-percent(372);
+    min-width: 350px;
     background:#faf9f9;
     position:relative;
     height: 180px;
     padding:20px 0 0 0;
+    margin-bottom: 55px;
     &:not(:first-child)
     {
       margin-left: 28px;
@@ -362,7 +437,7 @@ body {
     &__portret {
       position:absolute;
       right: 20px;
-      bottom: -30px;
+      bottom: -45px;
     }
 }
 /************Clients END************/
@@ -370,7 +445,7 @@ body {
 /************PRICING************/
 .pricing {
   background:$dark-blue;
-  padding: 90px 0;
+  padding: 90px 10px;
   @extend %flex-center;
   &__header {
     font: bold 36px Raleway;
@@ -383,7 +458,7 @@ body {
   }
   &__btn {
     border: 3px solid #fff;
-    margin-left: 115px;
+    margin-left: 8%;
     font: bold 18px Raleway;
     color: $dark-blue;
     padding:29px 53px; 
@@ -396,7 +471,8 @@ body {
   background:#363855 url('../img/footer-bg.png') no-repeat 21% 39%;
   height: 514px;
   position:relative;
-  padding: 144px 120px 0 0;
+  padding: 10% 8.5% 0 0;
+  height: 655px;
   &__copyright {
     position:absolute;
     bottom:72px;
@@ -424,7 +500,7 @@ body {
     margin-bottom: 23px;
   }
   &__list {
-    list-style:none;
+    @extend %ul-list-none;
   }
   &__item {
     text-align: right;
@@ -454,17 +530,17 @@ body {
   &__social {
     width: 17px;
     height: 19px;
-    object-fit: none;
+    display: block;
 
 
     &--twitter {
-      object-position: 0 0;
+      background: url("../img/socials.png") no-repeat 0 0;
     }
     &--instagram {
-      object-position: -34px 0;
+      background: url("../img/socials.png") no-repeat -34px 0;
     }
     &--google {
-      object-position: -73px 0;
+      background: url("../img/socials.png") no-repeat -73px 0;
     }
   }
   &__back {
@@ -474,4 +550,85 @@ body {
   }
 
 }
-/************FOOTER END***********/
+/************FOOTER END*********/
+
+/************MEDIA QUERIES*********/
+
+@media (max-width:1030px)
+{
+  .pricing {
+    &__header {
+      font-size: 32px;
+    }
+    &__btn {
+      padding: 26px 48px;
+    }
+  }
+  .page-footer {
+    height: 520px;
+    background-size: 66%;
+  }
+}
+@media (max-width:930px)
+{
+  .page-header {
+    &__logo-block {
+      width:45%;
+    }
+    &__help {
+      display: none;
+    }
+
+    &__nav {
+      display: none;
+    }
+    &__menu {
+      display: block;
+    }
+  }
+  .services {
+    @include flex-direction(column);
+  }
+  .info-block {
+    width: 100%;
+  }
+}
+@media (max-width:873px){
+  .features {
+    &__item:nth-child(3)
+    {
+      position:relative;
+      left: -50px;
+    }
+  }
+  .pricing {
+    &__btn {
+      font-size: 16px;
+      padding: 23px 43px;
+    }
+  }
+}
+@media (max-width:675px)
+{
+  .clients {
+    &__top {
+      padding: 0 10px;
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+    &__companies {
+      margin: 10px 0 0 0;
+      text-align: center;
+
+    }
+  }
+  .pricing {
+    text-align: center;
+    @include flex-direction(column);
+
+    &__btn {
+      margin: 20px 0 0 0;
+    }
+  }
+}
+/************MEDIA QUERIES END**********/
