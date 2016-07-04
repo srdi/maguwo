@@ -24,3 +24,11 @@
           font-weight: bold;
         }
 }
+
+%after-clear-fix {
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
