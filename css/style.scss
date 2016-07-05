@@ -36,6 +36,8 @@
 }
 body {
   /*width: 1400px;*/
+  min-width: 320px;
+
 }
 .link--reset {
   text-decoration: none;
@@ -689,6 +691,62 @@ body {
     {
       margin-left: 0;
       
+    }
+  }
+}
+@media (max-width:500px)
+{
+  .mobile-nav {
+    height: 220px;
+    & ul {
+      float: none;
+      text-align: center;
+    }
+    &__help {
+      float: none;
+      text-align: center;
+      margin-top: 16px;
+    }
+  }
+}
+@media (max-width:400px)
+{
+  .page-header {
+    &__logo-block {
+      width:60%;
+    }
+  }
+  .main {
+    &__header {
+      font-size: 40px;
+    }
+    &__subheader {
+      font-size: 28px;
+    }
+    &__check-btn {
+      min-width: 140px;
+    }
+  }
+  .info-block {
+    &__header {
+      font-size: 32px;
+    }
+    &__img {
+      max-width: 90%;
+    }
+  }
+  .clients {
+    &__quote {
+      min-width: 280px;
+      height: 220px;
+    }
+  }
+  .quote {
+    &__body {
+      max-width: 260px;
+    }
+    &__author {
+      width: 250px;
     }
   }
 }
